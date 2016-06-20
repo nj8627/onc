@@ -1,0 +1,397 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="10.0">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords>48D0836A37FCC8E064F51693FD408A53C11B41C01</Passwords>
+          <File RecordLimit="" FileFormat="41">tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD</File>
+          <FormatSpecificOptions>
+            <TableStyle>Quoted</TableStyle>
+            <NoProgress>True</NoProgress>
+            <CacheData>False</CacheData>
+            <PostSQL />
+            <PreSQL />
+            <NumSessions>1</NumSessions>
+            <NoSpool>True</NoSpool>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__
+Table=Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="CHNL_ID" size="200" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="V_String" />
+            <Field name="CHNL_NM" size="200" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="V_String" />
+            <Field name="CHNL_VAL" size="200" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="V_String" />
+            <Field name="PARENT_ID" size="20" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="V_String" />
+            <Field name="PARENT_NM" size="200" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="V_String" />
+            <Field name="PARENT_FULL_ADDR" size="445" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="V_String" />
+            <Field name="CHILD_ID" size="20" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="V_String" />
+            <Field name="CHILD_NM" size="200" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="V_String" />
+            <Field name="CHILD_FULL_ADDR" size="445" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="V_String" />
+            <Field name="PFZ_MKT_NM" size="100" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="V_String" />
+            <Field name="CHNL_NM_SLS" scale="2" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="CHNL_VAL_SLS" scale="2" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="PARENT_SLS" scale="6" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="CHILD_SLS" scale="6" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="CHNL_NM_GRWTH" scale="2" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="CHNL_VAL_GRWTH" scale="2" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="PARENT_GRWTH" scale="2" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="CHILD_GRWTH" scale="2" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="CHNL_NM_MKT_SHR" scale="2" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="CHNL_VAL_MKT_SHR" scale="2" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="PARENT_MKT_SHR" scale="2" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="CHILD_MKT_SHR" scale="2" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="CHNL_NM_NEW_PTNT" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="Int32" />
+            <Field name="CHNL_VAL_NEW_PTNT" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="Int32" />
+            <Field name="PARENT_NEW_PTNT" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="Int32" />
+            <Field name="CHILD_NEW_PTNT" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="Int32" />
+            <Field name="CHNL_NM_TOTAL_PTNT" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="Int32" />
+            <Field name="CHNL_VAL_TOTAL_PTNT" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="Int32" />
+            <Field name="PARENT_TOTAL_PTNT" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="Int32" />
+            <Field name="CHILD_TOTAL_PTNT" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="Int32" />
+            <Field name="CHNL_NM_NUM_HCP_TCL" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="Int32" />
+            <Field name="CHNL_VAL_NUM_HCP_TCL" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="Int32" />
+            <Field name="PARENT_NUM_HCP_TCL" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="Int32" />
+            <Field name="CHILD_NUM_HCP_TCL" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="Int32" />
+            <Field name="CHNL_NM_REACH" scale="2" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="CHNL_VAL_REACH" scale="2" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="PARENT_REACH" scale="2" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="CHILD_REACH" scale="2" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="CHNL_NM_FREQ" scale="2" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="CHNL_VAL_FREQ" scale="2" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="PARENT_FREQ" scale="2" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="CHILD_FREQ" scale="2" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="CHNL_NM_PENETRATION" scale="2" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="CHNL_VAL_PENETRATION" scale="2" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="PARENT_PENETRATION" scale="2" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="CHILD_PENETRATION" scale="2" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="CHNL_NM_RNK" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="Int32" />
+            <Field name="CHNL_VAL_RNK" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="Int32" />
+            <Field name="PARENT_RNK" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="Int32" />
+            <Field name="CHILD_RNK" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="Int32" />
+            <Field name="STD_CHNL_NM_SLS" scale="2" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="STD_CHNL_VAL_SLS" scale="2" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="STD_PARENT_SLS" scale="6" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+            <Field name="STD_CHILD_SLS" scale="6" size="40" source="File: tdbl:DSN=AMRROCP;UID=BATRAA09;PWD=__EncPwd1__|Select * From CDW_US_ASB_ONC_DB.OBU_ACNT_HIERY_VIS_STD" type="FixedDecimal" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="174" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField field="O_CHNL_NM_SLS" type="String" size="64" expression="&quot;$ &quot; + ToString(CHNL_NM_SLS,2,1)" />
+            <FormulaField field="O_CHNL_VAL_SLS" type="String" size="64" expression="&quot;$ &quot; + ToString(CHNL_VAL_SLS,2,1)" />
+            <FormulaField field="O_PARENT_SLS" type="String" size="64" expression="&quot;$ &quot; + ToString(PARENT_SLS,2,1)" />
+            <FormulaField field="O_CHILD_SLS" type="String" size="64" expression="&quot;$ &quot; + ToString(CHILD_SLS,2,1)" />
+            <FormulaField field="O_CHNL_NM_GRWTH" type="String" size="64" expression="IF !ISNULL(CHNL_NM_GRWTH) THEN ToString(CHNL_NM_GRWTH * 100,0,1) + &quot;%&quot; ELSE &quot;-&quot; ENDIF" />
+            <FormulaField field="O_CHNL_VAL_GRWTH" type="String" size="64" expression="IF !ISNULL(CHNL_VAL_GRWTH) THEN ToString(CHNL_VAL_GRWTH * 100,0,1) + &quot;%&quot; ELSE &quot;-&quot; ENDIF" />
+            <FormulaField field="O_PARENT_GRWTH" type="String" size="64" expression="IF !ISNULL(PARENT_GRWTH) THEN ToString(PARENT_GRWTH * 100,0,1) + &quot;%&quot; ELSE &quot;-&quot; ENDIF" />
+            <FormulaField field="O_CHILD_GRWTH" type="String" size="64" expression="IF !ISNULL(CHILD_GRWTH) THEN ToString(CHILD_GRWTH * 100,0,1) + &quot;%&quot; ELSE &quot;-&quot; ENDIF" />
+            <FormulaField field="O_CHNL_NM_MKT_SHR" type="String" size="64" expression="IF !ISNULL(CHNL_NM_MKT_SHR) THEN ToString(CHNL_NM_MKT_SHR * 100,0,1) + &quot;%&quot; ELSE &quot;-&quot; ENDIF" />
+            <FormulaField field="O_CHNL_VAL_MKT_SHR" type="String" size="64" expression="IF !ISNULL(CHNL_VAL_MKT_SHR) THEN ToString(CHNL_VAL_MKT_SHR * 100,0,1) + &quot;%&quot; ELSE &quot;-&quot; ENDIF" />
+            <FormulaField field="O_PARENT_MKT_SHR" type="String" size="64" expression="IF !ISNULL(PARENT_MKT_SHR) THEN ToString(PARENT_MKT_SHR * 100,0,1) + &quot;%&quot; ELSE &quot;-&quot; ENDIF" />
+            <FormulaField field="O_CHILD_MKT_SHR" type="String" size="64" expression="IF !ISNULL(CHILD_MKT_SHR) THEN ToString(CHILD_MKT_SHR * 100,0,1) + &quot;%&quot; ELSE &quot;-&quot; ENDIF" />
+            <FormulaField field="O_CHNL_NM_NEW_PTNT" type="String" size="64" expression="ToString(CHNL_NM_NEW_PTNT,0,1)" />
+            <FormulaField field="O_CHNL_VAL_NEW_PTNT" type="String" size="64" expression="ToString(CHNL_VAL_NEW_PTNT,0,1)" />
+            <FormulaField field="O_PARENT_NEW_PTNT" type="String" size="64" expression="ToString(PARENT_NEW_PTNT,0,1)" />
+            <FormulaField field="O_CHILD_NEW_PTNT" type="String" size="64" expression="ToString(CHILD_NEW_PTNT,0,1)" />
+            <FormulaField field="O_CHNL_NM_TOTAL_PTNT" type="String" size="64" expression="ToString(CHNL_NM_TOTAL_PTNT,0,1)" />
+            <FormulaField field="O_CHNL_VAL_TOTAL_PTNT" type="String" size="64" expression="ToString(CHNL_VAL_TOTAL_PTNT,0,1)" />
+            <FormulaField field="O_PARENT_TOTAL_PTNT" type="String" size="64" expression="ToString(PARENT_TOTAL_PTNT,0,1)" />
+            <FormulaField field="O_CHILD_TOTAL_PTNT" type="String" size="64" expression="ToString(CHILD_TOTAL_PTNT,0,1)" />
+            <FormulaField field="O_CHNL_NM_NUM_HCP_TCL" type="String" size="64" expression="ToString(CHNL_NM_NUM_HCP_TCL,0,1)" />
+            <FormulaField field="O_CHNL_VAL_NUM_HCP_TCL" type="String" size="64" expression="ToString(CHNL_VAL_NUM_HCP_TCL,0,1)" />
+            <FormulaField field="O_PARENT_NUM_HCP_TCL" type="String" size="64" expression="ToString(PARENT_NUM_HCP_TCL,0,1)" />
+            <FormulaField field="O_CHILD_NUM_HCP_TCL" type="String" size="64" expression="ToString(CHILD_NUM_HCP_TCL,0,1)" />
+            <FormulaField field="O_CHNL_NM_REACH" type="String" size="64" expression="IF !ISNULL(CHNL_NM_REACH) THEN ToString(CHNL_NM_REACH * 100,0,1) + &quot;%&quot; ELSE &quot;-&quot; ENDIF" />
+            <FormulaField field="O_CHNL_VAL_REACH" type="String" size="64" expression="IF !ISNULL(CHNL_VAL_REACH) THEN ToString(CHNL_VAL_REACH * 100,0,1) + &quot;%&quot; ELSE &quot;-&quot; ENDIF" />
+            <FormulaField field="O_PARENT_REACH" type="String" size="64" expression="IF !ISNULL(PARENT_REACH) THEN ToString(PARENT_REACH * 100,0,1) + &quot;%&quot; ELSE &quot;-&quot; ENDIF" />
+            <FormulaField field="O_CHILD_REACH" type="String" size="64" expression="IF !ISNULL(CHILD_REACH) THEN ToString(CHILD_REACH * 100,0,1) + &quot;%&quot; ELSE &quot;-&quot; ENDIF" />
+            <FormulaField field="O_CHNL_NM_FREQ" type="String" size="64" expression="IF !ISNULL(CHNL_NM_FREQ) THEN ToString(CHNL_NM_FREQ,2,1) ELSE &quot;-&quot; ENDIF" />
+            <FormulaField field="O_CHNL_VAL_FREQ" type="String" size="64" expression="IF !ISNULL(CHNL_VAL_FREQ) THEN ToString(CHNL_VAL_FREQ,2,1) ELSE &quot;-&quot; ENDIF" />
+            <FormulaField field="O_PARENT_FREQ" type="String" size="64" expression="IF !ISNULL(PARENT_FREQ) THEN ToString(PARENT_FREQ,2,1) ELSE &quot;-&quot; ENDIF" />
+            <FormulaField field="O_CHILD_FREQ" type="String" size="64" expression="IF !ISNULL(CHILD_FREQ) THEN ToString(CHILD_FREQ,2,1) ELSE &quot;-&quot; ENDIF" />
+            <FormulaField field="O_CHNL_NM_PENETRATION" type="String" size="64" expression="IF !ISNULL(CHNL_NM_PENETRATION) THEN ToString(CHNL_NM_PENETRATION * 100,0,1) + &quot;%&quot; ELSE &quot;-&quot; ENDIF" />
+            <FormulaField field="O_CHNL_VAL_PENETRATION" type="String" size="64" expression="IF !ISNULL(CHNL_VAL_PENETRATION) THEN ToString(CHNL_VAL_PENETRATION * 100,0,1) + &quot;%&quot; ELSE &quot;-&quot; ENDIF" />
+            <FormulaField field="O_PARENT_PENETRATION" type="String" size="64" expression="IF !ISNULL(PARENT_PENETRATION) THEN ToString(PARENT_PENETRATION * 100,0,1) + &quot;%&quot; ELSE &quot;-&quot; ENDIF" />
+            <FormulaField field="O_CHILD_PENETRATION" type="String" size="64" expression="IF !ISNULL(CHILD_PENETRATION) THEN ToString(CHILD_PENETRATION * 100,0,1) + &quot;%&quot; ELSE &quot;-&quot; ENDIF" />
+            <FormulaField field="O_STD_CHNL_NM_SLS" type="String" size="64" expression="ToString(STD_CHNL_NM_SLS * 100,0,1)" />
+            <FormulaField field="O_STD_CHNL_VAL_SLS" type="String" size="64" expression="ToString(STD_CHNL_VAL_SLS * 100,0,1)" />
+            <FormulaField field="O_STD_PARENT_SLS" type="String" size="64" expression="ToString(STD_PARENT_SLS * 100,0,1)" />
+            <FormulaField field="O_STD_CHILD_SLS" type="String" size="64" expression="ToString(STD_CHILD_SLS * 100,0,1)" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>O_CHNL_NM_SLS="$ " + ToString(CHNL_NM_SLS,2,1)
+O_CHNL_VAL_SLS="$ " + ToString(CHNL_VAL_SLS,2,1)
+O_PARENT_SLS="$ " + ToString(PARENT_SLS,2,1)
+...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="318" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <SelectFields>
+            <SelectField field="CHNL_ID" selected="True" />
+            <SelectField field="CHNL_NM" selected="True" />
+            <SelectField field="CHNL_VAL" selected="True" />
+            <SelectField field="PARENT_ID" selected="True" />
+            <SelectField field="PARENT_NM" selected="True" />
+            <SelectField field="PARENT_FULL_ADDR" selected="True" />
+            <SelectField field="CHILD_ID" selected="True" />
+            <SelectField field="CHILD_NM" selected="True" />
+            <SelectField field="CHILD_FULL_ADDR" selected="True" />
+            <SelectField field="PFZ_MKT_NM" selected="True" />
+            <SelectField field="CHNL_NM_SLS" selected="False" />
+            <SelectField field="CHNL_VAL_SLS" selected="False" />
+            <SelectField field="PARENT_SLS" selected="False" />
+            <SelectField field="CHILD_SLS" selected="False" />
+            <SelectField field="CHNL_NM_GRWTH" selected="False" />
+            <SelectField field="CHNL_VAL_GRWTH" selected="False" />
+            <SelectField field="PARENT_GRWTH" selected="False" />
+            <SelectField field="CHILD_GRWTH" selected="False" />
+            <SelectField field="CHNL_NM_MKT_SHR" selected="False" />
+            <SelectField field="CHNL_VAL_MKT_SHR" selected="False" />
+            <SelectField field="PARENT_MKT_SHR" selected="False" />
+            <SelectField field="CHILD_MKT_SHR" selected="False" />
+            <SelectField field="CHNL_NM_NEW_PTNT" selected="False" />
+            <SelectField field="CHNL_VAL_NEW_PTNT" selected="False" />
+            <SelectField field="PARENT_NEW_PTNT" selected="False" />
+            <SelectField field="CHILD_NEW_PTNT" selected="False" />
+            <SelectField field="CHNL_NM_TOTAL_PTNT" selected="False" />
+            <SelectField field="CHNL_VAL_TOTAL_PTNT" selected="False" />
+            <SelectField field="PARENT_TOTAL_PTNT" selected="False" />
+            <SelectField field="CHILD_TOTAL_PTNT" selected="False" />
+            <SelectField field="CHNL_NM_NUM_HCP_TCL" selected="False" />
+            <SelectField field="CHNL_VAL_NUM_HCP_TCL" selected="False" />
+            <SelectField field="PARENT_NUM_HCP_TCL" selected="False" />
+            <SelectField field="CHILD_NUM_HCP_TCL" selected="False" />
+            <SelectField field="CHNL_NM_REACH" selected="False" />
+            <SelectField field="CHNL_VAL_REACH" selected="False" />
+            <SelectField field="PARENT_REACH" selected="False" />
+            <SelectField field="CHILD_REACH" selected="False" />
+            <SelectField field="CHNL_NM_FREQ" selected="False" />
+            <SelectField field="CHNL_VAL_FREQ" selected="False" />
+            <SelectField field="PARENT_FREQ" selected="False" />
+            <SelectField field="CHILD_FREQ" selected="False" />
+            <SelectField field="CHNL_NM_PENETRATION" selected="False" />
+            <SelectField field="CHNL_VAL_PENETRATION" selected="False" />
+            <SelectField field="PARENT_PENETRATION" selected="False" />
+            <SelectField field="CHILD_PENETRATION" selected="False" />
+            <SelectField field="O_CHNL_NM_SLS" selected="True" />
+            <SelectField field="O_CHNL_VAL_SLS" selected="True" />
+            <SelectField field="O_PARENT_SLS" selected="True" />
+            <SelectField field="O_CHILD_SLS" selected="True" />
+            <SelectField field="O_CHNL_NM_GRWTH" selected="True" />
+            <SelectField field="O_CHNL_VAL_GRWTH" selected="True" />
+            <SelectField field="O_PARENT_GRWTH" selected="True" />
+            <SelectField field="O_CHILD_GRWTH" selected="True" />
+            <SelectField field="O_CHNL_NM_MKT_SHR" selected="True" />
+            <SelectField field="O_CHNL_VAL_MKT_SHR" selected="True" />
+            <SelectField field="O_PARENT_MKT_SHR" selected="True" />
+            <SelectField field="O_CHILD_MKT_SHR" selected="True" />
+            <SelectField field="O_CHNL_NM_NEW_PTNT" selected="True" />
+            <SelectField field="O_CHNL_VAL_NEW_PTNT" selected="True" />
+            <SelectField field="O_PARENT_NEW_PTNT" selected="True" />
+            <SelectField field="O_CHILD_NEW_PTNT" selected="True" />
+            <SelectField field="O_CHNL_NM_TOTAL_PTNT" selected="True" />
+            <SelectField field="O_CHNL_VAL_TOTAL_PTNT" selected="True" />
+            <SelectField field="O_PARENT_TOTAL_PTNT" selected="True" />
+            <SelectField field="O_CHILD_TOTAL_PTNT" selected="True" />
+            <SelectField field="O_CHNL_NM_NUM_HCP_TCL" selected="True" />
+            <SelectField field="O_CHNL_VAL_NUM_HCP_TCL" selected="True" />
+            <SelectField field="O_PARENT_NUM_HCP_TCL" selected="True" />
+            <SelectField field="O_CHILD_NUM_HCP_TCL" selected="True" />
+            <SelectField field="O_CHNL_NM_REACH" selected="True" />
+            <SelectField field="O_CHNL_VAL_REACH" selected="True" />
+            <SelectField field="O_PARENT_REACH" selected="True" />
+            <SelectField field="O_CHILD_REACH" selected="True" />
+            <SelectField field="O_CHNL_NM_FREQ" selected="True" />
+            <SelectField field="O_CHNL_VAL_FREQ" selected="True" />
+            <SelectField field="O_PARENT_FREQ" selected="True" />
+            <SelectField field="O_CHILD_FREQ" selected="True" />
+            <SelectField field="O_CHNL_NM_PENETRATION" selected="True" />
+            <SelectField field="O_CHNL_VAL_PENETRATION" selected="True" />
+            <SelectField field="O_PARENT_PENETRATION" selected="True" />
+            <SelectField field="O_CHILD_PENETRATION" selected="True" />
+            <SelectField field="CHNL_NM_RNK" selected="True" />
+            <SelectField field="CHNL_VAL_RNK" selected="True" />
+            <SelectField field="PARENT_RNK" selected="True" />
+            <SelectField field="CHILD_RNK" selected="True" />
+            <SelectField field="STD_CHNL_NM_SLS" selected="False" />
+            <SelectField field="STD_CHNL_VAL_SLS" selected="False" />
+            <SelectField field="STD_PARENT_SLS" selected="False" />
+            <SelectField field="STD_CHILD_SLS" selected="False" />
+            <SelectField field="O_STD_CHNL_NM_SLS" selected="True" />
+            <SelectField field="O_STD_CHNL_VAL_SLS" selected="True" />
+            <SelectField field="O_STD_PARENT_SLS" selected="True" />
+            <SelectField field="O_STD_CHILD_SLS" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="438" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="PFZ_MKT_NM" order="Ascending" />
+            <Field field="CHNL_ID" order="Ascending" />
+            <Field field="CHNL_NM_RNK" order="Ascending" />
+            <Field field="CHNL_VAL_RNK" order="Ascending" />
+            <Field field="PARENT_RNK" order="Ascending" />
+            <Field field="CHILD_RNK" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>PFZ_MKT_NM - Ascending
+CHNL_ID - Ascending
+CHNL_NM_RNK - Ascending
+CHNL_VAL_RNK - Ascending
+...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="594" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="0">C:\Users\BATRAA09\Documents\Account Hierarchy Visualization\Input Data\_Account_Hierarchy.txt</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <LineEndStyle>CRLF</LineEndStyle>
+            <Delimeter>|</Delimeter>
+            <ForceQuotes>True</ForceQuotes>
+            <HeaderRow>True</HeaderRow>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+          <MultiFile value="True" />
+          <MultiFileType>Prefix</MultiFileType>
+          <MultiFileField>PFZ_MKT_NM</MultiFileField>
+          <KeepField value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>_Account_Hierarchy.txt</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="270" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\BATRAA09\AppData\Local\Temp\2\Engine_37516_2032554c61e74a1c9f13cca1993f38d6_\Engine_36764_6cb6241bc771424faf6a6ea67cd5453d_.yxdb</TempFile>
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Export Account Hierarchy Std</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

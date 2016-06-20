@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load staticfiles %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{% static 'js/validatejs.js' %}" ></script>	
+<link rel="stylesheet" href="{% static 'style/jquery-ui.css' %}" />	
+<script src="{% static 'js/jquery-1.8.3.js' %}"></script>
+<script src="{% static 'js/jquery-ui.js' %}"></script>
+</head>
+<body>
+
+	<div id="wrapper">
+		<div id="header-wrapper">
+			<div class="browser-center">
+				<div style="overflow:none;display:inline;">
+					<span>
+						<a href="/acc_h/new/">
+							<img src="{% static 'images/logo1.jpg' %}" alt="logo" height="60" width="90" style="float:left; vertical-align:middle"/>
+							<img src="{% static 'images/p_I-2.png' %}" alt="logo" height="60" width="70"style="float:right; vertical-align:middle"/>
+							<h3 style="text-align:center; vertical-align:middle; padding-top:10px; ;float:center; font-size:40px; color:black;margin:0px;" >NA Oncology Account Hierarchy</h3>
+						</a>
+					</span> 
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="header-wrapper-2">
+	</div>
+
+	{% block main %}
+	{% endblock %}
+	<div id="footer"> Copyright 2016 ZS Associates.com. All Rights Reserved</div>
+</div>
+</body>
+</html>

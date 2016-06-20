@@ -1,0 +1,10 @@
+{% extends 'home.html' %}
+{% block main %}
+	<div  class="btn_container"> 
+			<button onclick="window.location.href='/acc_h/new/0'" class="button_new" value="0">All Markets</button>
+		{% for mkt in mkt_lis %}
+			<button onclick="window.location.href='/acc_h/new/{{mkt.id}}'" class="button_new" value={{mkt.id}}> {{mkt}}</button>
+		{% endfor %}
+	</div>
+{% endblock %}
+

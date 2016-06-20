@@ -1,0 +1,158 @@
+{% extends 'home.html' %}
+{% block main %}
+{% load mathfilters %}
+{{st}} - {{et}}
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".toggle_container").hide();
+	$("h2.expand_heading").toggle(function(){
+		$(this).addClass("active"); 
+		}, function () {
+		$(this).removeClass("active");
+	});
+	$("h2.expand_heading").click(function(){
+		$(this).next(".toggle_container").slideToggle("slow");
+	});
+	$(".expand_all").toggle(function(){
+		$(this).addClass("expanded"); 
+		}, function () {
+		$(this).removeClass("expanded");
+	});
+	$(".expand_all").click(function(){
+		$(".toggle_container").slideToggle("slow");
+	});
+});
+</script>
+<script>
+	function click_update()
+	{
+		brand = document.getElementById("brand").value ;
+		metric = document.getElementById("metric").value ;
+		time_period = document.getElementById("time_period").value ;
+		chnl_id = document.getElementById("chnl_id").value ;
+		window.location = '/acc_h/new/'+{{mkt_id}}+'/'+chnl_id+'/'+brand+"/"+metric+"/"+time_period+"/";
+	}
+</script>
+
+		<div class="top_rbn">
+			<span>
+			Brand:<select id="brand" class="select_new">
+						{% for brand in brand_lis %}
+							<option value="{{brand.id}}" {% if brand_id == brand.id|slugify %}selected{% endif %}>{{brand}}</option>
+						{% endfor %}
+					</select>
+			</span>
+			<span>
+			Metric: <select id="metric" class="select_new">
+							<option value="1" {% if metric == "1" %}selected{% endif %}>TRx</option>
+							<option value="2" {% if metric == "2" %}selected{% endif %}>Dollar</option>
+							<option value="3" {% if metric == "3" %}selected{% endif %}>Unit</option>
+					</select>
+			</span>
+			<span>
+			Time Period:<select id="time_period" class="select_new">
+							<option value="1">Rolling 12 months</option>
+					</select>
+			</span>
+		</div>
+		
+		<div  class="btn_container"> 
+		{% for chnl in chnl_id_lis %}
+			<button id="chnl_id" class="button_new" onclick="click_update()" value="{{chnl.id}}"> {{chnl}}</button>
+		{% endfor %}
+		</div>
+	        			
+                
+	<br><br>
+	<div id="main-content-wrapper">
+    	<div class="browser-center">
+        	<div id="center-content-wrapper">
+				<div class="grid-view-area">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" id="box-table-a">
+					  <tr>
+						<th width="3%">&nbsp;</th>
+						<th width="57%">Channel </th>
+						<th class="table_td">{{metric_sel}}</th>
+						<th class="table_td">{{metric_sel}} Growth</th>
+						<th class="table_td">{{metric_sel}} Market Share</th>
+						<th class="table_td">New Patients</th>
+						<th class="table_td">Total Patients</th>
+					  </tr>
+					</table>
+				</div>
+					{% for key,value in chnl_lis.items %}
+						<div class="expand_wrapper">
+							<h2 class="expand_heading"><a href="#">
+								<table width="100%" border="0" cellspacing="0" cellpadding="0" id="box-table-a">
+									<tr>
+										<td width="3%"></td>
+										<td width="57%">{{key}}</td>
+										<td class="table_td">{{value.1}}</td>
+										<td class="table_td">{{value.2}}%</td>
+										<td class="table_td">{{value.3}}%</td>
+										<td class="table_td">{{value.4}}</td>
+										<td class="table_td">{{value.5}}</td>
+									</tr>
+								</table>
+							</a></h2>
+							<div class="toggle_container">
+							{% for acc,child_acc in value.0.items %}
+									<h2 class="expand_heading">
+										<table width="100%" border="0" cellspacing="0" cellpadding="0" id="box-table-a">
+											<tr>
+												<td width="5%"></td>
+												<td width="25%">{{acc}} - {{acc.PARENT_NM}}</td>
+												<td width="30%">{{acc.PARENT_FULL_ADDR}}</td>
+												<td class="table_td">{{child_acc.1}}</td>
+												<td class="table_td">{{child_acc.2}}%</td>
+												<td class="table_td">{{child_acc.3}}%</td>
+												<td class="table_td">{{child_acc.4}}</td>
+												<td class="table_td">{{child_acc.5}}</td>
+			                	            </tr>
+										</table>
+									</h2>
+								<div class="toggle_container">
+										{% for child in child_acc.0 %}
+											<table width="100%" border="0" cellspacing="0" cellpadding="0" id="box-table-a">
+												<tr>
+													<td width="7%"></td>
+													<td width="23%">{{child.CHILD}} - {{child.CHILD.CHILD_NM}}</td>
+													<td width="30%">{{child.CHILD.CHILD_FULL_ADDR}}</td>
+													<td class="table_td">{% if metric == '1' %}
+																		{{child.CURR_TRX_SLS}}
+																	{% elif metric == '2' %}	
+																		{{child.CURR_DOL_SLS}}
+																	{% elif metric == '3' %}	
+																		{{child.CURR_UNIT_SLS}}
+																	{% endif %}
+													<td class="table_td">{% if metric == '1' and child.PREV_TRX_SLS != 0 %}
+																		{{child.CURR_TRX_SLS|sub:child.PREV_TRX_SLS|div:child.PREV_TRX_SLS|mul:100|floatformat:"1"}}
+																	{% elif metric == '2' and child.PREV_DOL_SLS != 0 %}	
+																		{{child.CURR_DOL_SLS|sub:child.PREV_DOL_SLS|div:child.PREV_DOL_SLS|mul:100|floatformat:"1"}}
+																	{% elif metric == '3' and  child.PREV_UNIT_SLS != 0 %}	
+																		{{child.CURR_UNIT_SLS|sub:child.PREV_UNIT_SLS|div:child.PREV_UNIT_SLS|mul:100|floatformat:"1"}}
+																	{% endif %}%
+													</td>
+													<td class="table_td">{% if metric == '1' and child.CURR_TRX_SLS_MKT != 0 %}
+																		{{child.CURR_TRX_SLS|mul:100|div:child.CURR_TRX_SLS_MKT|floatformat:"1"}}
+																	{% elif metric == '2' and child.CURR_TRX_SLS_MKT != 0 %}	
+																		{{child.CURR_DOL_SLS|mul:100|div:child.CURR_DOL_SLS_MKT|floatformat:"1"}}
+																	{% elif metric == '3' and child.CURR_TRX_SLS_MKT != 0 %}	
+																		{{child.CURR_UNIT_SLS|mul:100|div:child.CURR_UNIT_SLS_MKT|floatformat:"1"}}
+																	{% endif %}%</td>
+													<td class="table_td">{{child.CURR_NEW_PTNT}}</td>
+													<td class="table_td">{{child.CURR_TOTAL_PTNT}}</td>
+													</td>
+												</tr>
+											</table> 
+										{% endfor %}
+								</div>
+							{% endfor %}
+								
+							</div>
+						</div>
+				    {% endfor %}
+			</div>
+        </div>
+    </div> 
+{% endblock %}

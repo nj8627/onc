@@ -1,0 +1,348 @@
+{% extends 'home.html' %}
+{% block main %}
+{% load mathfilters %}
+{% load staticfiles %}
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".toggle_container").hide();
+	$("h2.expand_heading").toggle(function(){
+		$(this).addClass("active"); 
+		}, function () {
+		$(this).removeClass("active");
+	});
+	$("h2.expand_heading").click(function(){
+		$(this).next(".toggle_container").slideToggle("slow");
+		
+	});
+	$(".expand_all").toggle(function(){
+		$(this).addClass("expanded"); 
+		}, function () {
+		$(this).removeClass("expanded");
+	});
+	$(".expand_all").click(function(){
+		$(".toggle_container").slideToggle("slow");
+	});
+});
+</script>
+<script language="javascript" type="text/javascript">
+ $(function() {
+ $( "#dialog-form" ).dialog({
+								autoOpen: false,
+								height: 100,
+								modal: true,
+								show: {},
+								hide: {}
+							});
+							});
+</script>
+<script type="text/javascript">
+	function get_more(acc_id){
+		var x = document.getElementById(acc_id).rows.length;
+		if (x == 0){
+		$( "#dialog-form" ).dialog( "open" );
+		brand = document.getElementById("brand").value ;
+		metric = document.getElementById("metric").value ;
+		time_period = document.getElementById("time_period").value ;
+		mkt_id = document.getElementById("mkt").value ;
+		blnk = $("input[type='radio'][name='sel_blnk']:checked").val();
+		var table = document.getElementById(acc_id);
+		$.ajax({
+            type: "GET",
+        	url: "/acc_h/child_ajax/"+ mkt_id +'/'+{{chnl_id}}+'/'+brand+"/"+metric+"/"+time_period+"/"+acc_id+"/"+blnk,
+            success: function(data) {
+			for(i = 0; i < data.length; i++){
+				var row = table.insertRow(0);
+				var cell1 = row.insertCell(0);
+				var cell2 = row.insertCell(1);
+				var cell3 = row.insertCell(2);
+				var cell4 = row.insertCell(3);
+				var cell5 = row.insertCell(4);
+				var cell6 = row.insertCell(5);
+				var cell7 = row.insertCell(6);
+				var cell8 = row.insertCell(7);
+				var cell9 = row.insertCell(8);
+				var cell10 = row.insertCell(9);
+				var cell11 = row.insertCell(10);
+				var cell12 = row.insertCell(11);
+				cell1.style.width = '5%';
+				cell2.innerHTML = data[i]["CHILD__CHILD_ID"] +"-" +data[i]["CHILD__CHILD_NM"];
+				cell3.innerHTML = data[i]["CHILD__CHILD_FULL_ADDR"];
+				{% if metric == '1' %}
+					cell4.innerHTML = parseInt(data[i]["CURR_TRX_SLS"]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") ;
+					if ( data[i]["PREV_TRX_SLS"] != null && data[i]["PREV_TRX_SLS"] != 0){
+						
+						cell5.innerHTML = (((data[i]["CURR_TRX_SLS"] / data[i]["PREV_TRX_SLS"])-1)*100).toFixed(1) + '%';
+						var img = document.createElement('img');
+						if ( parseInt(data[i]["CURR_TRX_SLS"]) > parseInt(data[i]["PREV_TRX_SLS"]) && data[i]["CURR_TRX_SLS"] != null  )
+						{
+						img.src = "{% static 'images/4-5.png' %}";
+						}
+						else if ( parseInt(data[i]["CURR_TRX_SLS"]) <= parseInt(data[i]["PREV_TRX_SLS"]) && data[i]["CURR_TRX_SLS"] != null )
+						{
+						img.src = "{% static 'images/4-1.png' %}";
+						}
+						img.style.background = "transparent";
+						img.style.border = "None";
+						img.style.width = "12px";
+						img.style.height = "15px";
+						img.style.float = "right";
+						img.style.margin = "0";
+						img.style.padding = "0";
+						cell5.appendChild(img); 
+						
+					}
+					if ( data[i]["CURR_TRX_SLS_MKT"] != null && data[i]["CURR_TRX_SLS_MKT"] != 0){
+					cell6.innerHTML = (data[i]["CURR_TRX_SLS"]*100 / data[i]["CURR_TRX_SLS_MKT"]).toFixed(1) +'%' ;
+					}
+				{% elif metric == '2' %}
+					cell4.innerHTML = '$' + parseInt(data[i]["CURR_DOL_SLS"]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") ;
+					if ( data[i]["PREV_DOL_SLS"] != null && data[i]["PREV_DOL_SLS"] != 0){
+						var img = document.createElement('img');
+						if ( parseInt(data[i]["CURR_DOL_SLS"]) > parseInt(data[i]["PREV_DOL_SLS"]) && data[i]["CURR_DOL_SLS"] != null  )
+						{
+						img.src = "{% static 'images/4-5.png' %}";
+						}
+						else if ( parseInt(data[i]["CURR_DOL_SLS"]) <= parseInt(data[i]["PREV_DOL_SLS"]) && data[i]["CURR_DOL_SLS"] != null )
+						{
+						img.src = "{% static 'images/4-1.png' %}";
+						}
+						
+						img.style.background = "transparent";
+						img.style.border = "None";
+						img.style.width = "12px";
+						img.style.height = "15px";
+						img.style.float = "right";
+						img.style.margin = "0";
+						img.style.padding = "0";
+						cell5.innerHTML = (((data[i]["CURR_DOL_SLS"] / data[i]["PREV_DOL_SLS"])-1)*100).toFixed(1) + '%';
+						cell5.appendChild(img);
+					}
+					if ( data[i]["CURR_DOL_SLS_MKT"] != null && data[i]["CURR_DOL_SLS_MKT"] != 0){
+					cell6.innerHTML = (data[i]["CURR_DOL_SLS"]*100 / data[i]["CURR_DOL_SLS_MKT"]).toFixed(1) +'%' ;
+					}
+				{% elif metric == '3' %}
+					cell4.innerHTML = parseInt(data[i]["CURR_UNIT_SLS"]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") ;
+					if ( data[i]["PREV_UNIT_SLS"] != null && data[i]["PREV_UNIT_SLS"] != 0){
+						var img = document.createElement('img');
+						if ( parseInt(data[i]["CURR_UNIT_SLS"]) > parseInt(data[i]["PREV_UNIT_SLS"]) && data[i]["CURR_UNIT_SLS"] != null  )
+						{
+						img.src = "{% static 'images/4-5.png' %}";
+						}
+						else if ( parseInt(data[i]["CURR_UNIT_SLS"]) <= parseInt(data[i]["PREV_UNIT_SLS"]) && data[i]["CURR_UNIT_SLS"] != null )
+						{
+						img.src = "{% static 'images/4-1.png' %}";
+						}
+						img.style.background = "transparent";
+						img.style.border = "None";
+						img.style.width = "12px";
+						img.style.height = "15px";
+						img.style.float = "right";
+						img.style.margin = "0";
+						img.style.padding = "0";
+						cell5.innerHTML = (((data[i]["CURR_UNIT_SLS"] / data[i]["PREV_UNIT_SLS"])-1)*100).toFixed(1) + '%';
+						cell5.appendChild(img);
+					}
+					if ( data[i]["CURR_UNIT_SLS_MKT"] != null && data[i]["CURR_UNIT_SLS_MKT"] != 0){
+					cell6.innerHTML = (data[i]["CURR_UNIT_SLS"]*100 / data[i]["CURR_UNIT_SLS_MKT"]).toFixed(1) +'%' ;
+					}
+				{% endif %}
+				cell7.innerHTML = parseInt(data[i]["CURR_NEW_PTNT"]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+				cell8.innerHTML = parseInt(data[i]["CURR_TOTAL_PTNT"]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+				cell9.innerHTML = parseInt(data[i]["NUM_HCP_TCL"]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+				if ( data[i]["NUM_HCP_TCL"] != null && data[i]["NUM_HCP_TCL"] != 0){
+					cell10.innerHTML = (((data[i]["NUM_HCP_TCL_WITH_DTL"] / data[i]["NUM_HCP_TCL"]))*100).toFixed(1) + '%';
+				}
+				if ( data[i]["NUM_HCP_TCL_WITH_DTL"] != null && data[i]["NUM_HCP_TCL_WITH_DTL"] != 0){
+					cell11.innerHTML = (((data[i]["NUM_DTL_TCL"] / data[i]["NUM_HCP_TCL_WITH_DTL"]))).toFixed(1);
+				}
+				if ( data[i]["NUM_HCP_TCL"] != null && data[i]["NUM_HCP_TCL"] != 0){
+					cell12.innerHTML = (((data[i]["NUM_HCP_TCL_WITH_SLS"] / data[i]["NUM_HCP_TCL"]))*100).toFixed(1) + '%';
+				}
+				cell4.className = "table_td";
+				cell5.className = "table_td";
+				cell6.className = "table_td";
+				cell7.className = "table_td";
+				cell8.className = "table_td";
+				cell9.className = "table_td";
+				cell10.className = "table_td";
+				cell11.className = "table_td";
+				cell12.className = "table_td";
+				cell2.style.width = '21%';
+				cell3.style.width = '20%';
+            }
+        }
+        });
+		$( "#dialog-form" ).dialog( "close" );
+		}
+};
+</script>
+<script type="text/javascript">
+	function get_brand(mkt_id){
+	$.ajax({
+        type: "GET",
+        url: "/acc_h/brand_ajax/"+ mkt_id +"/",
+        success: function(data) {
+		$('#brand').empty();
+		$('#brand').append( new Option('ALL BRANDS','0') );
+		for(i = 0; i < data.length; i++){
+		$('#brand').append( new Option(data[i]["BRAND_NM"],data[i]["id"]) );
+		}
+		}
+		});
+	}
+</script>
+<script>
+	function click_update(chnl_id)
+	{
+		$( "#dialog-form" ).dialog( "open" );
+		brand = document.getElementById("brand").value ;
+		metric = document.getElementById("metric").value ;
+		time_period = document.getElementById("time_period").value ;
+		mkt_id = document.getElementById("mkt").value ;
+		blnk = $("input[type='radio'][name='sel_blnk']:checked").val();
+		window.location = '/acc_h/new/'+ mkt_id +'/'+chnl_id+'/'+brand+"/"+metric+"/"+time_period+"/"+blnk+"/";
+	}
+</script>
+<div class="top_rbn">
+	<span1>Market
+			<select id="mkt" class="select_new" onchange="get_brand(this.value)">
+				<option value="0">ALL MARKETS</button>
+			{% for mkt in mkt_lis %}
+					<option value="{{mkt.id}}" {% if mkt_id == mkt.id|slugify %}selected{% endif %}>{{mkt}}</option>
+				{% endfor %}
+			</select>
+	</span>
+	<span>Brand
+			<select id="brand" class="select_new">
+				<option value="0">ALL BRANDS</button>
+				{% for brand in brand_lis %}
+					<option value="{{brand.id}}" {% if brand_id == brand.id|slugify %}selected{% endif %}>{{brand}}</option>
+				{% endfor %}
+			</select>
+	</span>
+	<span>
+	Metric <select id="metric" class="select_new">
+					<option value="2" {% if metric == "2" %}selected{% endif %}>DOLLARS</option>
+					<option value="1" {% if metric == "1" %}selected{% endif %}>TRX</option>
+					<option value="3" {% if metric == "3" %}selected{% endif %}>UNITS</option>
+			</select>
+	</span>
+	<span>
+	Time Period <select id="time_period" class="select_new">
+				{% for time_bkt in tim_bkt_lis %}
+					<option value={{time_bkt.id}} {% if time_period == time_bkt.id|slugify %}selected{% endif %}>{{time_bkt}}</option>
+				{% endfor %}
+			</select>
+	</span>
+	<span>
+			<input type="radio" name="sel_blnk" value="1" {% if blnk == '1' %}checked{% endif %}> Show Blank
+			<input type="radio" name="sel_blnk" value="0" {% if blnk != '1' %}checked{% endif %}> Hide  Blank<br>
+	</span>
+	
+</div>
+<div  class="btn_container"> 
+	{% for chnl in chnl_id_lis %}
+		<button id="{{chnl.id}}"  {% if chnl.id|slugify == chnl_id %}class="button_new_2"{% else %}class="button_new" {% endif %} onclick="click_update(this.value)" value="{{chnl.id}}"> {{chnl}}</button>
+	{% endfor %}
+</div>
+		
+<div class="browser-center">
+	
+	<span style="float:right; padding-right:10px; padding-bottom:10px;"><I>Current Month:<b> April 2016</b></I></span>
+	<div id="center-content-wrapper">
+		<div class="grid-view-area">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="box-table-a">
+			  <tr>
+				<th width="3%">&nbsp;</th>
+				<th width="43%">Channel Name</th>
+				<th class="table_td">{{metric_sel}}</th>
+				<th class="table_td">{{metric_sel}} Growth</th>
+				<th class="table_td">{{metric_sel}} Market Share</th>
+				<th class="table_td">New Patients</th>
+				<th class="table_td">Total Patients</th>
+				<th class="table_td">Total HCPs in TCL</th>
+				<th class="table_td">TCL Reach </th>
+				<th class="table_td">TCL Frequency</th>
+				<th class="table_td">TCL Penetration</th>
+				
+			  </tr>
+			</table>
+		</div>
+	</div>
+</div>
+	<div id="main-content-wrapper">
+		<div class="browser-center">
+		<div id="center-content-wrapper">
+			{% for key,value in chnl_lis.items %}
+						<div class="expand_wrapper">
+							<h2 class="expand_heading"><a href="#">
+								<table width="100%" border="0" cellspacing="0" cellpadding="0" class="box-table-a">
+									<tr>
+										<td width="3%"></td>
+										<td width="43%">{{key.CHNL_NM}}</td>
+										<td class="table_td">{% if metric == "2" %}${% endif %}{{value.1}}</td>
+										<td class="table_td">{% if value.2 != 0 %}
+													{% if value.1|sub:value.2 > 0 %}
+													<img src="{% static 'images/4-5.png' %}" alt="logo" class="grwth">
+													{% else %}
+													<img src="{% static 'images/4-1.png' %}" alt="logo" class="grwth">
+													{% endif %}
+										{{value.1|sub:value.2|mul:100|div:value.2|floatformat:"1"}}%{% endif %}</td>
+										<td class="table_td">{% if value.3 != 0 %}{{value.1|mul:100|div:value.3|floatformat:"1"}}%{% endif %}</td>
+										<td class="table_td">{{value.4}}</td>
+										<td class="table_td">{{value.5}}</td>
+										<td class="table_td">{{value.6}}</td>
+										<td class="table_td">{% if value.6 != 0 %}{{value.7|div:value.6|mul:100|floatformat:"1"}}%{% endif %}</td>
+										<td class="table_td">{% if value.7 != 0 %}{{value.8|div:value.7|floatformat:"1"}}{% endif %}</td>
+										<td class="table_td">{% if value.6 != 0 %}{{value.9|div:value.6|mul:100|floatformat:"1"}}%{% endif %}</td>
+									</tr>
+								</table>
+							</a></h2>
+							<div class="toggle_container">
+							{% for acc,child_acc in value.0.items %}
+								<h2 class="expand_heading">
+									<button style="width:100%; border:none; background:none;padding-right:0;margin-right:0;" onclick="get_more(this.value)" value="{{key.CHNL_NM.id|slugify}}/{{acc.id|slugify}}" >
+										<table width="100%" border="0" cellspacing="0" cellpadding="0" class="box-table-a">
+											<tr>
+												<td width="4%"></td>
+												<td width="21%">{{acc}} - {{acc.PARENT_NM}}</td>
+												<td width="21%">{{acc.PARENT_FULL_ADDR}}</td>
+												<td class="table_td">{% if metric == "2" %}${% endif %}{{child_acc.0}}</td>
+												<td class="table_td">
+												{% if child_acc.1 != 0 %}
+													{% if child_acc.0|sub:child_acc.1 > 0 %}
+													<img src="{% static 'images/4-5.png' %}" alt="logo" style="float:right;margin:0;padding:0;border:None;height:15px;width:12px;background:transparent;">
+													{% else %}
+													<img src="{% static 'images/4-1.png' %}" alt="logo" style="float:right;margin:0;padding:0;border:None;height:15px;width:12px;background:transparent;">
+													{% endif %}
+													{{child_acc.0|sub:child_acc.1|mul:100|div:child_acc.1|floatformat:"1"}}%
+												{% endif %}
+												</td>
+												<td class="table_td">{% if child_acc.2 != 0 %}{{child_acc.0|mul:100|div:child_acc.2|floatformat:"1"}}%{% endif %}</td>
+												<td class="table_td">{{child_acc.3}}</td>
+												<td class="table_td">{{child_acc.4}}</td>
+												<td class="table_td">{{child_acc.5}}</td>
+												<td class="table_td">{% if child_acc.5 != 0 %}{{child_acc.6|div:child_acc.5|mul:100|floatformat:"1"}}%{% endif %}</td>
+												<td class="table_td">{% if child_acc.6 != 0 %}{{child_acc.7|div:child_acc.6|floatformat:"1"}}{% endif %}</td>
+												<td class="table_td">{% if child_acc.5 != 0 %}{{child_acc.8|div:child_acc.5|mul:100|floatformat:"1"}}%{% endif %}</td>
+			                	            </tr>
+										</table>
+									</button>
+								</h2>
+								<div class="toggle_container">
+									<table width="100%" border="0" cellspacing="0" cellpadding="0" class="box-table-a" id="{{key.CHNL_NM.id|slugify}}/{{acc.id|slugify}}">
+										
+									</table> 
+								</div>
+							{% endfor %}
+								
+							</div>
+						</div>
+				    {% endfor %}
+			</div>
+        </div>
+    </div> 
+	<div id="dialog-form" title="Loading...">
+	<span style="margin-left:25px;margin-right:15px;"><img src="{% static 'images/ajax-loader.gif' %}"/></span>
+	</div>
+{% endblock %}

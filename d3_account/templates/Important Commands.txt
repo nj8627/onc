@@ -1,0 +1,22 @@
+Jetty Server Run Command on Local:
+
+java -jar jetty-runner-9.3.0.M0.jar  --port 8080  .
+
+S3 Bucket Website Hosting Bucket Policy:
+
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "PublicReadGetObject",
+			"Effect": "Allow",
+			"Principal": "*",
+			"Action": "s3:GetObject",
+			"Resource": "arn:aws:s3:::naonc-account-hierarchy/*"
+		}
+	]
+}
+
+Running the Python server:
+
+python manage.py runserver
