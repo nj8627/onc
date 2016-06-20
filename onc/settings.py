@@ -79,6 +79,7 @@ WSGI_APPLICATION = 'onc.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
+import dj_database_url
 
 DATABASES = {
     'default': {
@@ -86,6 +87,10 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+
 
 
 # Internationalization
@@ -110,3 +115,5 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
